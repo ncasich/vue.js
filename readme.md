@@ -22,7 +22,7 @@ $ npm run dev
 ```
 ## Branches
 
- * master - main branch, doesn't contains any content
+ * master - *main branch, doesn't contains any content*
 
 ## License
 
