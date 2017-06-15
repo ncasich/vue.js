@@ -4,7 +4,9 @@ Here comes project description
 
 ## Instalation
 
-Here comes instalation guide
+$ git clone
+$ npm i
+$ npm run dev
 
 ## License
 
