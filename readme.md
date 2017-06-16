@@ -6,17 +6,17 @@ Here comes project description
 
 Clone this project
 ```
-$ git clone
+$ git clone git@github.com:ncasich/vue.js.git
 ```
 Check the branch you need
 ```
-$ git checkout branchname
+$ git checkout 'selected_branchname'
 ```
 Install modules needed for this branch
 ```
-$ npm i
+$ npm install
 ```
-Build js
+Build js & styles
 ```
 $ npm run dev
 ```
