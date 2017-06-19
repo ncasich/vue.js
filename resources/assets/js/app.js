@@ -18,5 +18,23 @@ Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
     el: '#app',
-    data: {title: 'Hello, Vue.JS!'},
+    data: {
+        show: true,
+        ingridients: ['meat', 'fruit', 'coockies'],
+        persons: [
+            {name: 'Akkakiy Zyablikov', age: '34', sex: 'male'},
+            {name: 'Dazdraperma Pryanichkina', age: '26', sex: 'female'},
+        ],
+    },
+    computed: {
+        output: function () {
+            console.log('computed: igridients changed');
+            return this.ingridients;
+        }
+    },
+    watch: {
+        ingrdients: function (value) {
+            console.log('watch: igridients changed');
+        }
+    },
 });

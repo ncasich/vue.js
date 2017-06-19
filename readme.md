@@ -24,6 +24,7 @@ $ npm run dev
 
  * master - *main branch, doesn't contains any content*
  * IteractingDom - *styles, classes, watch, computed, events, event-modifiers*
+ * ConditionalRendering - *v-if, v-else, v-show, v-for, index, :key*
 ## License
 
 This project comes under the [MIT license](http://opensource.org/licenses/MIT).
