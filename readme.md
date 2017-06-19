@@ -23,7 +23,7 @@ $ npm run dev
 ## Branches
 
  * master - *main branch, doesn't contains any content*
-
+ * IteractingDom - *styles, classes, watch, computed, events, event-modifiers*
 ## License
 
 This project comes under the [MIT license](http://opensource.org/licenses/MIT).
