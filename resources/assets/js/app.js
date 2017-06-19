@@ -17,13 +17,48 @@ window.Vue = require('vue');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app',
-    data: {
-        title: 'Laravel'
-    },
-    methods: {
-        changeTitle: function (e) {
-            this.title = e.target.value;
+        el: '#app',
+        data: {
+            title: 'Laravel',
+            link: 'http://google.com/',
+            message: 'Class demo',
+            counter: 0,
+            secondCounter: 0,
+            attachRed: false,
+            color: 'gray',
+
+        },
+        computed: {
+            output: function () {
+                console.log('Computed');
+                return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+            },
+            divClasses(){
+                return {
+                    red: this.attachRed,
+                    blue: !this.attachRed
+                };
+            }
+
+
+        },
+        watch: {
+            counter(value){
+                console.log(value);
+                let vm = this;
+                setTimeout(function () {
+                    vm.counter = 0;
+                }, 2000)
+            }
+        },
+        methods: {
+            changeTitle: function (e) {
+                this.title = e.target.value;
+            },
+            result: function () {
+                console.log('Result');
+                return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+            }
         }
-    }
-});
+    })
+;
