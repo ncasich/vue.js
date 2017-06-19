@@ -29,11 +29,11 @@ const app = new Vue({
     computed: {
         output: function () {
             console.log('computed: igridients changed');
-            return this.ingridients;
+            return this.ingridients.length >= 5;
         }
     },
     watch: {
-        ingrdients: function (value) {
+        ingridients: function (value) {
             console.log('watch: igridients changed');
         }
     },
