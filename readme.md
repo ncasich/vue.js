@@ -14,7 +14,7 @@ $ git checkout 'selected_branchname'
 ```
 Install modules needed for this branch
 ```
-$ npm install
+$ npm install 
 ```
 Build js & styles
 ```
