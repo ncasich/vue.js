@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="flex-center position-ref full-height">
-        <div class="content" id="app">
-            @{{title}}
+        <div class="content" id="content">
+            <example></example>
         </div>
     </div>
 @endsection
