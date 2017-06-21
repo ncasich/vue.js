@@ -14,9 +14,91 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+//Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: '#app',
-    data: {title: 'Hello, Vue.JS!'},
+const app1 = new Vue({
+    el: '#app1',
+    data: {
+        title: 'The VueJS 1st instance',
+        showParagraph: false
+    },
+    methods: {
+        show(){
+            this.showParagraph = true;
+            this.updateTitle('The VueJS 1st instance (updated)');
+        },
+        updateTitle(title){
+            this.title = title;
+        },
+        destroy(){
+            this.$destroy();
+        }
+
+    },
+    computed: {
+        lowerCaseTitle(){
+            return this.title.toLowerCase();
+        }
+    },
+    beforeCreate(){
+        console.log('beforeCreate');
+    },
+
+    created(){
+        console.log('created');
+    },
+
+    beforeMount(){
+        console.log('beforeMount');
+    },
+
+    beforeUpdate(){
+        console.log('beforeUpdate');
+    },
+
+    mounted(){
+        console.log('mounted');
+    },
+
+    updated(){
+        console.log('updated');
+    },
+    beforeDestroy(){
+        console.log('beforeDestroy');
+    },
+    destroyed(){
+        console.log('destroyed');
+    }
 });
+
+const app2 = new Vue({
+    el: '#app2',
+    data: {
+        title: 'The VueJS 2nd instance',
+        showParagraph: false
+    },
+    methods: {
+        onChange(){
+            app1.title = 'Changed from vm2!';
+        },
+        updateTitle(title){
+            this.title = title;
+        }
+    },
+    computed: {
+        lowerCaseTitle(){
+            return this.title.toLowerCase();
+        }
+    },
+});
+
+const app3 = new Vue({
+    template: '<h1>Hello, World!</h1>'
+});
+
+app3.$mount();
+
+$('div#content').append(app3.$el);
+
+
+
