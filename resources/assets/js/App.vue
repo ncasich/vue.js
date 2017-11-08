@@ -7,17 +7,18 @@
 				<button @click="selectedComponent = 'appNew'">New</button>
 				
 				<hr>
-				<app-quote>
-					<div class="quote-title" slot="title">{{quoteTitle}}</div>
-					<div class="quote-subtitle" slot="subtitle">{{quoteSubtitle}}</div>
-					<div class="quote-content">{{quoteContent}}</div>
-				</app-quote>
-				
-				<component :is="selectedComponent">
-					<!--<div slot="title">{{quoteTitle}}</div>-->
-					<div slot="subtitle">{{quoteSubtitle}}</div>
-					<!--<div>{{quoteContent}}</div>-->
-				</component>
+				<!--<app-quote>-->
+					<!--<div class="quote-title" slot="title">{{quoteTitle}}</div>-->
+					<!--<div class="quote-subtitle" slot="subtitle">{{quoteSubtitle}}</div>-->
+					<!--<div class="quote-content">{{quoteContent}}</div>-->
+				<!--</app-quote>-->
+				<keep-alive>
+					<component :is="selectedComponent">
+						<!--<div slot="title">{{quoteTitle}}</div>-->
+						<div slot="subtitle">{{quoteSubtitle}}</div>
+						<!--<div>{{quoteContent}}</div>-->
+					</component>
+				</keep-alive>
 			</div>
 		</div>
 	</div>
