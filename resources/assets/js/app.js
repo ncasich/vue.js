@@ -17,3 +17,5 @@ window.Vue = require('vue');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({el: '#content'});
+Vue.config.devtools = false;
+Vue.config.productionTip = false;
