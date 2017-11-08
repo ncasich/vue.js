@@ -15,7 +15,7 @@
 				
 				<component :is="selectedComponent">
 					<!--<div slot="title">{{quoteTitle}}</div>-->
-					<!--<div slot="subtitle">{{quoteSubtitle}}</div>-->
+					<div slot="subtitle">{{quoteSubtitle}}</div>
 					<!--<div>{{quoteContent}}</div>-->
 				</component>
 			</div>
