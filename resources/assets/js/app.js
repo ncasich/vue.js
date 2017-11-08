@@ -14,8 +14,14 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+import App from './App.vue'
 
-const app = new Vue({el: '#content'});
+export const eventBus = new Vue();
+
+new Vue({
+	el: '#content',
+	render: h => h(App)
+});
+
 Vue.config.devtools = false;
 Vue.config.productionTip = false;
