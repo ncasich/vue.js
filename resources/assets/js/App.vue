@@ -11,7 +11,7 @@
                                 type="text"
                                 id="email"
                                 class="form-control"
-                                v-model="email">
+                                v-model="userData.email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
@@ -19,7 +19,7 @@
                                 type="password"
                                 id="password"
                                 class="form-control"
-                                v-model="password">
+                                v-model="userData.password">
                     </div>
                     <div class="form-group">
                         <label for="age">Age</label>
@@ -27,7 +27,7 @@
                                 type="number"
                                 id="age"
                                 class="form-control"
-                                v-model="age">
+                                v-model="userData.age">
                     </div>
                 </div>
             </div>
@@ -100,9 +100,9 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Mail: <strong>{{email}}</strong></p>
-                        <p>Password: <strong>{{password}}</strong></p>
-                        <p>Age: <strong>{{age}}</strong></p>
+                        <p>Mail: <strong>{{userData.email}}</strong></p>
+                        <p>Password: <strong>{{userData.password}}</strong></p>
+                        <p>Age: <strong>{{userData.age}}</strong></p>
                         <p>Message: <strong>{{message}}</strong></p>
                         <p><strong>Send Mail?</strong><strong></strong></p>
                         <ul>
@@ -121,9 +121,11 @@
     export default {
         data(){
             return {
-                email: '',
-                password: '',
-                age: '',
+                userData: {
+                    email: '',
+                    password: '',
+                    age: 34,
+                },
                 message: '',
                 gender: '',
                 priority: '',
