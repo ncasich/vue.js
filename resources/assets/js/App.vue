@@ -19,7 +19,8 @@
                                 type="password"
                                 id="password"
                                 class="form-control"
-                                v-model="userData.password">
+                                v-model.lazy="userData.password">
+                        {{userData.password}}
                     </div>
                     <div class="form-group">
                         <label for="age">Age</label>
@@ -47,13 +48,13 @@
                             <input
                                     type="checkbox"
                                     id="sendmail"
-                                    value="SendMail"> Send Mail
+                                    value="SendMail" v-model="sendMail"> Send Mail
                             </label>
                         <label for="sendInfoMail">
                             <input
                                     type="checkbox"
                                     id="sendInfoMail"
-                                    value="SendInfoMail"> Send Infomail
+                                    value="SendInfoMail" v-model="sendMail"> Send Infomail
                             </label>
                     </div>
                 </div>
@@ -65,12 +66,14 @@
                             <input
                                     type="radio"
                                     id="male"
+                                    v-model="gender"
                                     value="Male"> Male
                             </label>
                         <label for="female">
                             <input
                                     type="radio"
                                     id="female"
+                                    v-model="gender"
                                     value="Female"> Female
                             </label>
                     </div>
@@ -80,8 +83,8 @@
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                     <div class="form-group">
                         <label for="priority">Priority</label>
-                        <select id="priority" class="form-control" v-model="priority">
-                            <option></option>
+                        <select id="priority" class="form-control" v-model="selectedPriority">
+                            <option v-for="priority in priorities" :selected="priority == 'Medium'">{{priority}}</option>
                         </select>
                     </div>
                 </div>
@@ -106,7 +109,7 @@
                         <p>Message: <strong>{{message}}</strong></p>
                         <p><strong>Send Mail?</strong><strong></strong></p>
                         <ul>
-                            <li></li>
+                            <li v-for="item in sendMail">{{item}}</li>
                         </ul>
                         <p>Gender: <strong>{{gender}}</strong></p>
                         <p>Priority: <strong>{{priority}}</strong></p>
@@ -129,6 +132,10 @@
                 message: '',
                 gender: '',
                 priority: '',
+                sendMail: [],
+                gender: 'Male',
+                selectedPriority: 'High',
+                priorities: ['High', 'Medium', 'Low']
             }
         }
     }
