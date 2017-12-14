@@ -31,6 +31,8 @@ $ npm run dev
   * CommunicatingBetweenComponents - *Props, ValidatingProps, $emmit('custom_event'), callback as a property, listening to a custom events, EventBus*
   * AdvancedComponentUsage - *Slots, NamedSlots, Default Slots, Slots defaults, Component, Dynamic render, Component destroyed, component activated, component deactivated, keep-alive*
   * SecondCourseProject-WonderfulQuotes - *Quotes small app using slots*
+  * UsingAndCreatingDirectives - *Creating custom directives locally and globally*
+  
 ## License
 
 This project comes under the [MIT license](http://opensource.org/licenses/MIT).
